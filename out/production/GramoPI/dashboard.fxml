@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="320.0" prefWidth="240.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboardController">
+   <children>
+      <ImageView fitHeight="320.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@wall/wall1.jpg" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="songScrollPane" layoutX="14.0" layoutY="56.0" prefHeight="209.0" prefWidth="213.0">
+         <content>
+            <VBox fx:id="songsVBox" maxWidth="195.0" />
+         </content>
+      </ScrollPane>
+      <Label fx:id="libraryLabel" layoutX="14.0" layoutY="14.0" text="Library" textFill="WHITE">
+         <font>
+            <Font name="Roboto Light" size="26.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="baseControls" layoutY="264.0" prefHeight="55.0" prefWidth="240.0">
+         <children>
+            <JFXButton fx:id="upButton" buttonType="RAISED" disable="true" layoutX="176.0" layoutY="5.0" onAction="#loadMusicDetails" ripplerFill="#dddddd" text=" " visible="false">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/upWhite.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="playButton" buttonType="RAISED" disable="true" layoutX="95.0" layoutY="5.0" onAction="#playSong" ripplerFill="#dddddd" text=" " visible="false">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/play.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="pauseButton" buttonType="RAISED" disable="true" layoutX="95.0" layoutY="5.0" onAction="#pauseSong" ripplerFill="#dddddd" text=" " visible="false">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/pause.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="songDetails" prefHeight="320.0" prefWidth="240.0" translateY="320.0">
+         <children>
+            <ImageView fitHeight="125.0" fitWidth="127.0" layoutX="58.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/noAlbumArt.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="playButton1" buttonType="RAISED" layoutX="92.0" layoutY="265.0" onAction="#playSong" ripplerFill="#dddddd" text=" " visible="false">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/play.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="pauseButton1" buttonType="RAISED" layoutX="92.0" layoutY="265.0" onAction="#pauseSong" ripplerFill="#dddddd" text=" " visible="false">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/pause.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label fx:id="songNameLabel" layoutX="14.0" layoutY="14.0" prefHeight="41.0" prefWidth="213.0" text="Song Name" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Roboto Light" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="artistNameLabel" layoutX="12.0" layoutY="58.0" text="By Artist Name" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Light" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="169.0" layoutY="265.0" onAction="#unloadMusicDetails" ripplerFill="#dddddd" text=" ">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/downWhite.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
